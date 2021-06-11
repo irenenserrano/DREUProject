@@ -12,13 +12,13 @@ import java.util.*
 
 
 class Tester : Activity() {
-    val plot: XYPlot = findViewById(R.id.tester)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tester)
 
-        val domainLabels: IntArray = intArrayOf(1, 2, 3, 6, 7, 8, 9, 10, 13, 14)
+        val plot: XYPlot = findViewById(R.id.tester)
+        var domainLabels: IntArray = intArrayOf(1, 2, 3, 6, 7, 8, 9, 10, 13, 14)
         val series1Numbers: IntArray = intArrayOf(1, 4, 2, 8, 4, 16, 8, 32, 16, 64)
         val series2Numbers: IntArray = intArrayOf(5, 2, 10, 5, 20, 10, 40, 20, 80, 40)
 
