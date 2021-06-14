@@ -11,7 +11,7 @@ import java.text.ParsePosition
 import java.util.*
 
 
-class Tester : Activity() {
+class TesterPlot : Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
