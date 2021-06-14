@@ -17,11 +17,15 @@ class Tester : Activity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tester)
 
+        // Initialize the XYplot
         val plot: XYPlot = findViewById(R.id.tester)
+
+        //create arrays that will act as our y values
         var domainLabels: IntArray = intArrayOf(1, 2, 3, 6, 7, 8, 9, 10, 13, 14)
         val series1Numbers: IntArray = intArrayOf(1, 4, 2, 8, 4, 16, 8, 32, 16, 64)
         val series2Numbers: IntArray = intArrayOf(5, 2, 10, 5, 20, 10, 40, 20, 80, 40)
 
+        // Turn the y values into XYseries
         val series1: XYSeries = SimpleXYSeries(
             series1Numbers.toMutableList(),
             SimpleXYSeries.ArrayFormat.Y_VALS_ONLY,
@@ -33,11 +37,14 @@ class Tester : Activity() {
             "Series2"
         )
 
+        // create formatters to use for drawing a series using a LineAndPointRenderer
+        // and configure them from xml
         val series1Format: LineAndPointFormatter =
             LineAndPointFormatter(this, R.xml.line_point_formater_with_labels)
         var series2Format: LineAndPointFormatter =
             LineAndPointFormatter(this, R.xml.line_point_formater_with_labels_2)
 
+        // add a dashed-line effect to series2 line:
         series2Format.getLinePaint().setPathEffect(
             DashPathEffect(
                 floatArrayOf(
@@ -47,6 +54,7 @@ class Tester : Activity() {
             )
         )
 
+        // add smooth-effect to the lines
         series1Format.setInterpolationParams(
             CatmullRomInterpolator.Params(
                 10,
@@ -60,6 +68,7 @@ class Tester : Activity() {
             )
         )
 
+        // add the series to the plot
         plot.addSeries(series1, series1Format)
         plot.addSeries(series2, series2Format)
 
