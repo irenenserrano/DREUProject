@@ -7,7 +7,7 @@
     <com.androidplot.xy.XYPlot
         android:id="@+id/tester"
         style="@style/APDefacto.Dark"
-        androidPlot.title="My Plot"
+        ap.title="My Plot"
         android:layout_width="match_parent"
         android:layout_height="fill_parent"
         ap:domainTitle="domain"
