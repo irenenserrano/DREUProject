@@ -31,6 +31,4 @@
             android:lineSpacingMultiplier="1.2"
             android:text="@string/text"/>
     </LinearLayout>
-
-
 </ScrollView>
