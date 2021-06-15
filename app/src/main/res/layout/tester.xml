@@ -13,7 +13,7 @@
         <com.androidplot.xy.XYPlot
             android:id="@+id/tester"
             style="@style/APDefacto.Dark"
-            ap.title="My Plot"
+            ap.title="My XP Plot"
             android:layout_width="match_parent"
             android:layout_height="250dp"
             android:minWidth="200dp"
@@ -29,6 +29,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:lineSpacingMultiplier="1.2"
-            android:text="@string/text"/>
+            android:text="@string/text" />
+
+        <com.androidplot.xy.XYPlot
+            android:id="@+id/tester_bar"
+            style="@style/APDefacto.Dark"
+            app.title="My Bar Chart"
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:minWidth="200dp"
+            android:minHeight="200dp"
+            ap:domainTitle="domain"
+            ap:lineLabelRotationBottom="-45"
+            ap:lineLabels="left|bottom"
+            ap:rangeTitle="range"
+            ap:title="A Simple Bar Chart" />
     </LinearLayout>
 </ScrollView>
