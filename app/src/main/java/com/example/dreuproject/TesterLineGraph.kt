@@ -1,6 +1,7 @@
 package com.example.dreuproject
 
 import android.app.Activity
+import android.graphics.Color
 import android.os.Bundle
 import android.os.DropBoxManager
 import android.util.Log
@@ -41,8 +42,17 @@ class TesterLineGraph: Activity() {
             series1.appendData(DataPoint(x,y1),true,  100)
             series2.appendData(DataPoint(x,y2), true, 100)
         }
+
+        // add style to the series
+        series1.color = Color.RED
+        series2.color = Color.BLACK
+
         // add series to graph
         graph.addSeries(series1)
         graph.addSeries(series2)
+
+        //set max x range
+        graph.viewport.setMaxX(25.0)
+        graph.viewport.isXAxisBoundsManual = true
     }
 }
