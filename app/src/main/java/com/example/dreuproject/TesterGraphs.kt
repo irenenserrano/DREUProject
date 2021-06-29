@@ -16,7 +16,7 @@ class TesterLineGraph: Activity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.tester_line_chart)
-
+        // CODE FOR LINE GRAPH
         // create a new data series
         var series1 = LineGraphSeries<DataPoint>()
         var series2 = LineGraphSeries<DataPoint>()
@@ -53,6 +53,7 @@ class TesterLineGraph: Activity() {
         graph.viewport.setMaxX(25.0)
         graph.viewport.isXAxisBoundsManual = true
 
+        // CODE FOR SCATTER GRAPH
         //create new data series
         var xySeries1 = PointsGraphSeries<DataPoint>()
         var xySeries2 = PointsGraphSeries<DataPoint>()
