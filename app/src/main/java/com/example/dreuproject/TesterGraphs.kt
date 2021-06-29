@@ -11,11 +11,11 @@ import com.jjoe64.graphview.series.PointsGraphSeries
 import java.io.BufferedReader
 import java.io.InputStreamReader
 
-class TesterLineGraph: Activity() {
+class TesterGraphs: Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tester_line_chart)
+        setContentView(R.layout.tester_scroll_view)
         // CODE FOR LINE GRAPH
         // create a new data series
         var series1 = LineGraphSeries<DataPoint>()
@@ -45,9 +45,17 @@ class TesterLineGraph: Activity() {
         series1.color = Color.RED
         series2.color = Color.BLACK
 
+        // add titles to series
+        series1.title = "Series 1"
+        series2.title = "Series 2"
+
         // add series to graph
         graph.addSeries(series1)
         graph.addSeries(series2)
+
+        // display legend
+        graph.legendRenderer.isVisible = true
+        graph.legendRenderer.setFixedPosition(10,10)
 
         //set max x range
         graph.viewport.setMaxX(25.0)
@@ -87,6 +95,10 @@ class TesterLineGraph: Activity() {
         xySeries2.color = Color.RED
         xySeries2.size = 20f
 
+        // add titles to series
+        xySeries1.title = "Series 1"
+        xySeries2.title = "Series 2"
+
         // set scrollable and scalable
         scatterGraph.viewport.isScalable = true
         scatterGraph.viewport.setScalableY(true)
@@ -106,5 +118,9 @@ class TesterLineGraph: Activity() {
         // add the series to the graph
         scatterGraph.addSeries(xySeries1)
         scatterGraph.addSeries(xySeries2)
+
+        // display legend
+        scatterGraph.legendRenderer.isVisible = true
+        scatterGraph.legendRenderer.setFixedPosition(10,10)
     }
 }
