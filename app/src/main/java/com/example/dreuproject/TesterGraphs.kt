@@ -15,17 +15,17 @@ class TesterGraphs: Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tester_scroll_view)
+        setContentView(R.layout.activity_main)
         // CODE FOR LINE GRAPH
         // create a new data series
-        var series1 = LineGraphSeries<DataPoint>()
-        var series2 = LineGraphSeries<DataPoint>()
+        val series1 = LineGraphSeries<DataPoint>()
+        val series2 = LineGraphSeries<DataPoint>()
         // link activity to layout view
         val graph: GraphView = findViewById(R.id.line_chart)
 
         // try to read and save data into series
-        val minput = InputStreamReader(assets.open("tester_data_CSV.csv"))
-        val reader = BufferedReader(minput)
+        val input = InputStreamReader(assets.open("tester_data_CSV.csv"))
+        val reader = BufferedReader(input)
         var line: String?
         var x: Double
         var y1: Double
@@ -63,27 +63,27 @@ class TesterGraphs: Activity() {
 
         // CODE FOR SCATTER GRAPH
         //create new data series
-        var xySeries1 = PointsGraphSeries<DataPoint>()
-        var xySeries2 = PointsGraphSeries<DataPoint>()
+        val xySeries1 = PointsGraphSeries<DataPoint>()
+        val xySeries2 = PointsGraphSeries<DataPoint>()
 
         //create a graph view
-        var scatterGraph: GraphView = findViewById(R.id.scatter_plot)
+        val scatterGraph: GraphView = findViewById(R.id.scatter_plot)
 
         // add data to series
-        val minput2 = InputStreamReader(assets.open("tester_data_scatter.csv"))
-        val reader2 = BufferedReader(minput2)
+        val input2 = InputStreamReader(assets.open("tester_data_scatter.csv"))
+        val reader2 = BufferedReader(input2)
         var line2: String?
-        var x_scatter: Double
-        var y1_scatter: Double
-        var y2_scatter: Double
+        var xScatter: Double
+        var y1Scatter: Double
+        var y2Scatter: Double
         while(reader2.readLine().also { line2 = it } != null) {
             val row2: List<String> = line2!!.split(",")
             Log.i("Row", row2.toString())
-            x_scatter = row2[0].toDouble()
-            y1_scatter = row2[1].toDouble()
-            y2_scatter = row2[2].toDouble()
-            xySeries1.appendData(DataPoint(x_scatter, y1_scatter), true, 100)
-            xySeries2.appendData(DataPoint(x_scatter, y2_scatter), true, 100)
+            xScatter = row2[0].toDouble()
+            y1Scatter = row2[1].toDouble()
+            y2Scatter = row2[2].toDouble()
+            xySeries1.appendData(DataPoint(xScatter, y1Scatter), true, 100)
+            xySeries2.appendData(DataPoint(xScatter, y2Scatter), true, 100)
         }
 
         // add style to the shape series
