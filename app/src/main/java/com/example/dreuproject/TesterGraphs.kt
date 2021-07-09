@@ -15,7 +15,7 @@ class TesterGraphs: Activity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.tester_scroll_view)
+        setContentView(R.layout.activity_main)
         // CODE FOR LINE GRAPH
         // create a new data series
         val series = LineGraphSeries<DataPoint>()
@@ -30,7 +30,6 @@ class TesterGraphs: Activity() {
             y = 2*x
             series.appendData(DataPoint(x, y), true, 26)
         }
-
 
         // add series to graph
         graph.addSeries(series)
