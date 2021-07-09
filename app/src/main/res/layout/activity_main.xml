@@ -50,8 +50,10 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:clickable="true"
+                    android:focusable="true"
                     android:text="@string/header_one"
-                    android:textSize="40sp" />
+                    android:textSize="40sp"
+                    app:layout_constraintTop_toTopOf="@id/fixed_layout"/>
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <!-- The following is the expandable portion whose
