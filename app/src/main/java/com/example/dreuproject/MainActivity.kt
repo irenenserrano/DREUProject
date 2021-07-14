@@ -19,6 +19,7 @@ class MainActivity : AppCompatActivity() {
         val cardView: CardView = findViewById(R.id.base_cardview)
         val hiddenView: LinearLayout = findViewById(R.id.hidden_view)
         val headerOne: TextView = findViewById(R.id.header_one)
+        val test:TextView = findViewById(R.id.test)
 
         // Add a click listener to header so that view can expand and collapse
         // Original start value of hiddenView.visibility is gone
@@ -34,6 +35,19 @@ class MainActivity : AppCompatActivity() {
                 hiddenView.visibility = View.VISIBLE
             }
         }
+
+//        headerOne.setOnClickListener {
+//            // If the CardView is already expanded, set its visibility to gone
+//            // If it is not expanded, set its visibility to visible
+//            Log.d("testing", "testing")
+//            if (test.visibility == View.VISIBLE) {
+//                TransitionManager.beginDelayedTransition(cardView, AutoTransition())
+//                test.visibility = View.GONE
+//            } else {
+//                TransitionManager.beginDelayedTransition(cardView, AutoTransition())
+//                test.visibility = View.VISIBLE
+//            }
+//        }
 
     }
 
